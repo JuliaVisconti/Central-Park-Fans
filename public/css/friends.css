@@ -1,0 +1,387 @@
+
+body {
+  margin: 0;
+  padding: 100;
+  background-color: rgb(21, 10, 21);
+  font-family: "Parkinsans", serif;
+}
+
+
+
+:root {
+  --tamanho-header: 100px;
+  --tamanho-banner: calc(
+    10vh - var(--tamanho-header) - var(--tamanho-footer) - 1px 
+  ); /* determinou um espaçamento entre o header e o resumo */
+  --tamanho-login: calc(
+    10vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  );}
+
+
+
+.header {
+  height: var(--tamanho-header);}
+
+.container {
+  display: flex;
+  width: 10%;
+  margin: auto;}
+
+
+
+.header .container {
+  justify-content: space-between;
+  align-items: space-between;
+  height: 10%;}
+
+
+
+.header a {
+  text-decoration: none;
+  color: orange;}
+
+
+
+.agora {
+  font-weight: 800;}
+
+
+
+.navbar {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: red;}
+
+
+
+.titulo {
+  color: rgb(255, 0, 0);
+  width: fit-content;
+  font-weight: 1000;}
+
+
+
+.banner {
+  height: var(--tamanho-banner);
+  color: rgb(250, 174, 53); /* mudou a cor da frase: Uma das séries mais assistidas no mundo */
+  background-image: url();
+  background-size: cover;
+  margin-bottom: 10vh; /* desce ou sobe o resumo */}
+
+
+
+.banner .container {
+  justify-content: center;/* está mexendo na frase: Uma das séries mais assistidas no mundo */
+  align-items: center;
+  height: 100%;}
+
+
+
+/* TEXTO "UMA DAS SÉRIES MAIS ASSISTIDAS NO MUNDO" */
+.banner .container p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 35px; /* tamanho da fonte */}
+
+
+
+.banner .container span {
+  font-weight: 800;}
+
+
+
+.social {
+  background-color: rgb(255, 240, 144); /* cor da caixa de texto do resumo da série */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;}
+
+
+
+/* CAIXA DO RESUMO */
+.social .container .boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* empurra o texto para esquerda */
+  padding: 10px 0; /* define o comprimento da altura da caixa */}
+
+
+
+/* CAIXA DO RESUMO */
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;}
+
+
+
+.box img {
+  width: 200px;}
+
+
+
+.version {
+  font-size: 20px;}
+
+
+
+body {
+  margin: 25px;
+  padding: 10px;
+  font-family: "Barlow", sans-serif;
+  background-color: black;
+  background-image: url("../assets/imgs/friends.webp"); /* imagem de fundo da tela com os 6 amigos no sofá */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;}
+
+
+
+/* HEADER */
+:root {
+  --tamanho-header: 100px; /* determinou o tamanho da faixa do meu header */
+  --tamanho-login: calc(
+    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  );}
+
+
+
+/* HEADER */
+.header {
+  width: 50%; /* distanciamento entre o Central Perk Fans e a navbar */
+  height: var(--tamanho-header);}
+
+
+
+.container {
+  display: flex;
+  width: 100%;
+  margin: auto;}
+
+
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;}
+
+
+/* NAVBAR */
+.header a {
+  text-decoration: none;
+  color: #e3b062; /* cor dos 4 elementos na navbar */}
+
+
+
+.agora {
+  font-weight: 800;}
+
+
+
+/* NAVBAR */
+.navbar {
+  width: 300px; /* distanciamento dos 4 elementos nela */
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  list-style: none;
+  color: orange;/* cor do " | " no meio dos 4 elementos */
+  top: 0;}
+
+
+
+/* TÍTULO "CENTRAL PERK FANS" */
+.titulo {
+  color: orange; /* cor da frase */
+  width: fit-content;
+  font-weight: 1000;}
+
+
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--tamanho-login);
+  width: 37%;}
+
+
+
+.login .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: rgb(255, 240, 144); 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
+
+
+.login .card-login {
+  text-align: center;}
+
+
+
+.login .formulario .campo {
+  margin-bottom: 15px;}
+
+
+
+.login .formulario .campo span {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 15px;
+  font-weight: bold;}
+
+
+
+.login .formulario .campo input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;}
+
+
+
+/* BOTÃO "ENTRAR" NO LOGIN */
+.login .botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(0, 0, 0); /* cor do preenchimento da caixa do botão */
+  color: rgb(255, 255, 255); /* cor do texto do botão */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;}
+
+
+
+/* BOTÃO "ENVIAR" DO CADASTRAR */
+.login .botao:hover {
+  background-color: #ffc352;} /* cor do botão */
+
+
+
+/* CAIXA DE TEXTO DO QUIZ */
+.simulador .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;/* largura da caixa de texto */
+  max-width: 1200px; /* largura da caixa de texto */
+  padding: 50px; /* largura da caixa de texto */
+  background-color: rgb(255, 240, 144);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
+  
+
+/* CAIXAS DOS SELECTS DO QUIZ */
+.select_simulador {
+    width: 80%;
+    height: 30px; /* comprimento da altura das caixas de texto */
+    font-size: 18px;/* tamanho da fonte */
+    color: rgb(0, 0, 0); /* cor do texto das caixas */
+    border: 3px solid rgb(255, 206, 136); /* cor da borda das caixas */
+    border-radius: 10px;}
+
+
+    
+/* CAIXA DOS SELECTS DO QUIZ */
+.select_simulador:hover {
+    cursor: pointer;
+    background-color: #ffc352; /* ao passar o mouse na ciaxa, ela muda de cor e fica nessa cor */
+    color: black}
+
+
+
+/* BOTÃO "ENVIAR" NO QUIZ*/
+.botao_simulador {
+    width: 40%;
+    height: 30px;
+    font-size: 18px;
+    color: black;
+    border: 3px solid rgb(255, 206, 136); /* cor da borda do botão "enviar" */
+    border-radius: 10px;}
+
+
+
+/* BOTÃO "ENVIAR" NO QUIZ*/
+.botao_simulador:hover {
+    cursor: pointer;
+    background-color: #ffc352; /* ao passar o mouse na ciaxa, ela muda de cor e fica nessa cor */
+    color: black}
+
+
+
+/* ALINHAMENTO DOS TEXTOS DO QUIZ*/
+#quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dash{
+  width: 50vw;
+  position: relative;
+  top: 0;
+  left: 20%;
+  background-color: black;
+  height: 100%;
+}
+
+.kpis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.caixa-kpi {
+  width: 40%;
+  height: 20vh;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.superior-kpi {
+  width: 100%;
+  height: 30%;
+  background-color: #161618;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inferior-kpi {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.titulo-kpi {
+  color: white;
+  font-size: 20px;
+}
+
+.texto-kpi {
+  color: black;
+  font-size: 40px;
+}

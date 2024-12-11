@@ -1,0 +1,402 @@
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+body {
+  margin: 0; /* não fez nada */
+  padding: 100; /* não fez nada */
+  font-family: "Barlow", sans-serif; /* não sei o que faz */
+  background-color: rgb(21, 17, 10); /* não fez nada */
+}
+
+
+/* NÃO SEI SUA FUNÇÃO */
+:root {
+  --tamanho-header: 100px; /* não fez nada */
+  --tamanho-banner: calc(
+    10vh - var(--tamanho-header) - var(--tamanho-footer) - 1px 
+  ); /* determinou um espaçamento entre os elementos header, resumo e footer */
+  --tamanho-login: calc(
+    10vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  ); /* não fez nada */
+  --tamanho-footer: 20px;
+} /* não fez nada */
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.header {
+  height: var(--tamanho-header);
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.container {
+  display: flex; /* não sei o que faz */
+  width: 10%; /* não fez nada */
+  margin: auto; /* não sei o que faz */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.header .container {
+  justify-content: space-between; /* não sei o que faz */
+  align-items: space-between; /* não sei o que faz */
+  height: 10%; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.header a {
+  text-decoration: none; /* não sei o que faz */
+  color: orange; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.agora {
+  font-weight: 800; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.navbar {
+  width: 200px; /* não fez nada */
+  display: flex; /* não sei o que faz */
+  align-items: center; /* não sei o que faz */
+  justify-content: space-between; /* não sei o que faz */
+  list-style: none; /* não sei o que faz */
+  color: red; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.titulo {
+  color: rgb(255, 0, 0); /* não fez nada */
+  width: fit-content; /* não fez nada */
+  font-weight: 1000; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.banner {
+  height: var(--tamanho-banner); /* não sei o que faz */
+  color: rgb(250, 174, 53); /* mudou a cor da frase: Uma das séries mais assistidas no mundo */
+  background-image: url(); /* não sei o que faz */
+  background-size: cover; /* não sei o que faz */
+  margin-bottom: 10vh; /* desce ou sobe o resumo */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.banner .container {
+  justify-content: center;/* está mexendo na frase: Uma das séries mais assistidas no mundo */
+  align-items: center; /* não sei o que faz */
+  height: 100%; /* não fez nada */
+}
+
+
+
+/* ESTILIZAÇÃO DO TEXTO "UMA DAS SÉRIES MAIS ASSISTIDAS NO MUNDO" */
+.banner .container p {
+  width: 100%; /* não sei o que faz */
+  margin: 0; /* não fez nada */
+  padding: 0; /* não fez nada */
+  font-size: 35px; /* tamanho da fonte */
+} 
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.banner .container span {
+  font-weight: 800; /* não sei o que faz */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.social {
+  background-color: rgb(226, 249, 168); /* cor da caixa de texto do resumo da série */
+  display: flex; /* não sei o que faz */
+  justify-content: center; /* não sei o que faz */
+  align-items: flex-start; /* não sei o que faz */
+}
+
+
+
+/* ESTILIZAÇÃO DA CAIXA DO RESUMO */
+.social .container .boxes {
+  display: flex; /* não sei o que faz */
+  justify-content: space-between; /* não fez nada */
+  width: 100%; /* empurra o texto para esquerda */
+  padding: 10px 0; /* define o comprimento da altura da caixa */
+}
+
+
+
+/* ESTILIZAÇÃO DA CAIXA DO RESUMO */
+.box {
+  display: flex; /* não sei o que faz */
+  flex-direction: column; /* não sei o que faz */
+  align-items: center; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.box img {
+  width: 200px; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.footer {
+  background-color: orange; /* não fez nada */
+  height: var(--tamanho-footer); /* não sei o que faz */
+  color: rgb(0, 0, 0); /* não fez nada */
+  display: flex; /* não fez nada */
+  font-size: 15px; /* não fez nada */
+}
+
+
+
+/* ESTILIZAÇÃO DA FRASE NO FOOTER */
+.footer .container {
+  justify-content: center; /* mudou o alinhamento da frase no footer */
+  align-items: center; /* mexeu com a posição do número da versão ao lado da frase do footer */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.version {
+  font-size: 20px; /* não fez nada */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+body {
+  margin: 30px; /* não sei o que faz */
+  padding: 10px; /* não sei o que faz */
+  font-family: "Barlow", sans-serif; /* não sei o que faz */
+  background-color: black; /* não fez nada */
+  background-image: url("../assets/imgs/friends.webp"); /* imagem de fundo da tela com os 6 amigos no sofá */
+  display: flex; /* não sei o que faz */
+  flex-direction: column; /* não sei o que faz */
+  justify-content: center; /* não sei o que faz */
+  align-items: center; /* não sei o que faz */
+  height: 50%; /* não fez nada */
+}
+
+
+
+/* ESTILIZAÇÃO DO HEADER E FOOTER */
+:root {
+  --tamanho-header: 100px; /* determinou o tamanho da faixa do meu header */
+  --tamanho-login: calc(
+    100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px
+  ); /* não fez nada */
+  --tamanho-footer: 50px; /* determinou o tamanho da faixa do meu footer */
+}
+
+
+
+/* ESTILIZAÇÃO DO HEADER */
+.header {
+  width: 50%; /* distanciamento entre o Central Perk Fans e a navbar */
+  height: var(--tamanho-header); /* não sei o que faz */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.container {
+  display: flex; /* não sei o que faz */
+  width: 100%; /* não sei o que faz */
+  margin: auto; /* não sei o que faz */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.header .container {
+  justify-content: space-between; /* não sei o que faz */
+  align-items: center; /* não sei o que faz */
+  height: 100%; /* não sei o que faz */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.header a {
+  text-decoration: none; /* não sei o que faz */
+  color: #e3b062; /* cor dos 4 elementos na navbar */
+}
+
+
+
+/* NÃO SEI SUA FUNÇÃO */
+.agora {
+  font-weight: 800; /* não fez nada */
+}
+
+
+
+/* ESTILIZAÇÃO DA NAVBAR */
+.navbar {
+  width: 300px; /* distanciamento dos 4 elementos nela */
+  display: flex; /* não sei o que faz */
+  align-items: space-between; /* não fez nada */
+  justify-content: space-between; /* não sei o que faz */
+  list-style: none; /* não sei o que faz */
+  color: orange;/* cor do " | " no meio dos 4 elementos */
+  top: 0; /* não sei o que faz */
+}
+
+
+
+/* ESTILIZAÇÃO DO "CENTRAL PERK FANS" */
+.titulo {
+  color: orange; /* cor da frase */
+  width: fit-content; /* não fez nada */
+  font-weight: 1000; /* não fez nada */
+}
+
+
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--tamanho-login);
+  width: 37%;
+}
+
+
+
+.login .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: rgb(238, 236, 236);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.login .card-cadastro {
+  color: #ff002b;
+}
+
+
+
+.login .card-login {
+  text-align: center;
+  color: #ff002b;
+}
+
+
+
+.login .formulario .campo {
+  margin-bottom: 15px;
+}
+
+
+
+.login .formulario .campo span {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 15px;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+
+
+.login .formulario .campo input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 8px;
+}
+
+
+
+.login .botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(255, 0, 43);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+
+.login .botao:hover {
+  background-color: #ff0000;
+}
+
+
+
+/* ESTILIZAÇÃO DO FOOTER */
+.footer {
+  width: 100%; /* tamanho das laterais da faixa background */
+  background-color: rgb(255, 157, 0); /* cor da faixa back ground do footer */
+  height: var(--tamanho-footer);
+  color: black; /* cor do texto */
+  display: flex; /* não sei o que faz */
+  justify-content: center; /* texto está no centro da faixa */
+  align-items: center; /* texto está no centro da faixa */
+  font-size: 15px; /* tamanho do texto */
+  position: fixed; /* está mantendo a faixa do footer lá embaixo e não colado na caixa de texto */
+  bottom: 0; /* altura do footer */
+}
+
+
+/* ESTILIZAÇÃO DO FOOTER */
+.version {
+  font-size: 15px; /* tamanho da fonte no número da versão */
+} 
+
+
+
+.simulador .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: rgb(238, 236, 236);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* FALTA: trocar a fonte do texto do resumo, colar e estilizar o quiz, montar o ranking, montar as dashboards, página de login e cadastro, fazer parte da VM e web data viz */

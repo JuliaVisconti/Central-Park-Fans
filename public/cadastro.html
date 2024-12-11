@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Central Perk Fans | Cadastro</title>
+
+  <link rel="stylesheet" href="./css/friends.css">
+  <link rel="icon" href="assets/imgs/Logo friends.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo">Central Perk Fans</h1>
+      <ul class="navbar">
+        <li>
+          <a href="index.html">Página Inicial</a>
+        </li>
+        <li>
+          <a href="simulador.html">Quiz</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li class="agora">
+          <a href="#">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--header fim-->
+
+  <div class="login">
+
+    <div class="container">
+      <div class="card card-cadastro">
+        <h2>Bem-vindo!</h2>
+        <div class="formulario">
+          <div class="campo">
+            <span>Nome:</span>
+            <input id="ipt_nome" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>Telefone:</span>
+            <input id="ipt_telefone" type="number" placeholder="Insira aqui seu telefone" />
+          </div>
+          <div class="campo">
+            <span>E-mail:</span>
+            <input id="ipt_email" type="text" placeholder="meuemail@provedor.com" />
+          </div>
+          <div class="campo">
+            <span>Senha:</span>
+            <input id="ipt_senha" type="password" placeholder="******" />
+          </div>
+          <div class="campo">
+            <span>Confirmação da Senha:</span>
+            <input id="ipt_confirmacao_senha" type="password" placeholder="******" />
+          </div>
+          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+function cadastrar() {
+
+  var nomeVar = ipt_nome.value;
+  var telefoneVar = ipt_telefone.value;
+  var emailVar = ipt_email.value;
+  var senhaVar = ipt_senha.value;
+  var confirmacaoSenhaVar = ipt_confirmacao_senha.value;
+  var validacaoMaiuscula = senhaVar.toUpperCase();
+  var validacaoMinuscula = senhaVar.toLowerCase();
+
+  if (
+    nomeVar == "" ||
+    telefoneVar == "" ||
+    emailVar == "" ||
+    senhaVar == "" ||
+    confirmacaoSenhaVar == ""
+  ) {
+    alert("Prencha todos os campos");
+  } else if (!emailVar.includes('@') || !emailVar.includes('.com') || emailVar.length < 6) {
+    alert("Utilize um email válido");
+  } else if (senhaVar.length < 8 || validacaoMaiuscula == senhaVar || validacaoMinuscula == senhaVar || confirmacaoSenhaVar != senhaVar) {
+    alert("Utilize uma senha válida");
+  } else if (telefoneVar.length < 11) {
+    alert("Utilize um telefone válido");
+  } else {
+
+  fetch("/usuarios/cadastrar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nomeServer: nomeVar,
+      emailServer: emailVar,
+      senhaServer: senhaVar,
+      telefoneServer: telefoneVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+      window.location = './login.html';
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+  }
+}
+</script>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Central Perk Fans | Quiz</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/friends.css">
+    <link rel="icon" href="./assets/imgs/Logo friends.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body onload="validarEntrada()">
+
+    <!--header inicio-->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">Central Perk Fans</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Página Inicial</a>
+                </li>
+                <li class="agora">Quiz</li>
+                <li>|</li>
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+                <li>
+                    <a href="./login.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- simulador inicio -->
+        <div class="simulador">
+            <div class="container" id="mensagem">
+                <h2>Quiz</h2>
+                <div id="quiz">
+                    
+                </div>
+            </div>
+        </div>
+    <!-- simulador fim -->
+
+</body>
+
+</html>
+
+<script>
+
+    var vetor = [];
+
+    function validarEntrada() {
+        if(sessionStorage.ID_USUARIO == '' || sessionStorage == '') {
+            return quiz.innerHTML = `Faça login para ter acesso ao Quiz!`;
+        }
+        plotarPerguntas();
+        return
+    }
+
+    function plotarPerguntas() {
+        var idVar = sessionStorage.ID_USUARIO;
+
+        fetch("/usuarios/perguntas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              idServer: idVar,
+            }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            resposta.json().then(json => {
+                    console.log(json);
+                    vetor = json.lista;
+                    colocarPerguntas(vetor);
+                });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+    });
+    }
+
+    var listaPerguntas = [];
+
+    function colocarPerguntas(a) {
+        var lista = a;
+        var idPergunta = '';
+        var mensagem = '';
+        var perguntaAtual = '';
+        var perguntaAnterior = '';
+
+        for(var i = 0; i < lista.length; i++) {
+            perguntaAtual = lista[i].id;
+
+            if(perguntaAnterior != perguntaAtual) {
+                perguntaAnterior = perguntaAtual;
+                listaPerguntas.push(perguntaAnterior);
+            }
+        }
+
+        for(var cont = 0; cont < lista.length; cont++) {
+            perguntaAtual = lista[cont].id;
+            if(perguntaAtual == 1) {
+                mensagem += `
+                <h1>Pergunta 1:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta1">
+                    <option value="1">${lista[0].Opcao}</option>
+                    <option value="2">${lista[1].Opcao}</option>
+                    <option value="3">${lista[2].Opcao}</option>
+                    <option value="4">${lista[3].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 5) {
+                mensagem += `
+                <h1>Pergunta 2:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta2">
+                    <option value="5">${lista[4].Opcao}</option>
+                    <option value="6">${lista[5].Opcao}</option>
+                    <option value="7">${lista[6].Opcao}</option>
+                    <option value="8">${lista[7].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 9) {
+                mensagem += `
+                <h1>Pergunta 3:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta3">
+                    <option value="9">${lista[8].Opcao}</option>
+                    <option value="10">${lista[9].Opcao}</option>
+                    <option value="11">${lista[10].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 2;
+            } else if(perguntaAtual == 12) {
+                mensagem += `
+                <h1>Pergunta 4:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta4">
+                    <option value="12">${lista[11].Opcao}</option>
+                    <option value="13">${lista[12].Opcao}</option>
+                    <option value="14">${lista[13].Opcao}</option>
+                    <option value="15">${lista[14].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 16) {
+                mensagem += `
+                <h1>Pergunta 5:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta5">
+                    <option value="16">${lista[15].Opcao}</option>
+                    <option value="17">${lista[16].Opcao}</option>
+                    <option value="18">${lista[17].Opcao}</option>
+                    <option value="19">${lista[18].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 20) {
+                mensagem += `
+                <h1>Pergunta 6:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta6">
+                    <option value="20">${lista[19].Opcao}</option>
+                    <option value="21">${lista[20].Opcao}</option>
+                    <option value="22">${lista[21].Opcao}</option>
+                    <option value="23">${lista[22].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 24) {
+                mensagem += `
+                <h1>Pergunta 7:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta7">
+                    <option value="24">${lista[23].Opcao}</option>
+                    <option value="25">${lista[24].Opcao}</option>
+                    <option value="26">${lista[25].Opcao}</option>
+                    <option value="27">${lista[26].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 28) {
+                mensagem += `
+                <h1>Pergunta 8:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta8">
+                    <option value="28">${lista[27].Opcao}</option>
+                    <option value="29">${lista[28].Opcao}</option>
+                    <option value="30">${lista[29].Opcao}</option>
+                    <option value="31">${lista[30].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 32) {
+                mensagem += `
+                <h1>Pergunta 9:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta9">
+                    <option value="32">${lista[31].Opcao}</option>
+                    <option value="33">${lista[32].Opcao}</option>
+                    <option value="34">${lista[33].Opcao}</option>
+                    <option value="35">${lista[34].Opcao}</option>
+                </select> <br><br>
+                `;
+                cont += 3;
+            } else if(perguntaAtual == 36) {
+                mensagem += `
+                <h1>Pergunta 10:</h1> <br>
+                <h2>${lista[cont].Pergunta}</h2> <br>
+                <select class="select_simulador" id="slt_pergunta10">
+                    <option value="36">${lista[35].Opcao}</option>
+                    <option value="37">${lista[36].Opcao}</option>
+                    <option value="38">${lista[37].Opcao}</option>
+                    <option value="39">${lista[38].Opcao}</option>
+                </select> <br><br>
+                `;
+            }
+        }
+        quiz.innerHTML = `${mensagem} <br><br> <button class="botao_simulador" onclick="enviarResposta()">Enviar</button>`;
+    }
+
+    var pontuacao = 0;
+    function enviarResposta() {
+        if(slt_pergunta1.value == '4') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '7') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '11') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '14') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '19') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '21') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '35') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '31') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '34') {
+            pontuacao++;
+        } else if (slt_pergunta2.value == '38') {
+            pontuacao++;
+        }
+
+        var idVar = sessionStorage.ID_USUARIO;
+
+        fetch("/usuarios/inserirPontuacao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+            idServer: idVar,
+            pontuacaoServer: pontuacao,
+            }),
+        })        
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+
+        alert("Respostas salvas com sucesso!");
+        }
+</script>
